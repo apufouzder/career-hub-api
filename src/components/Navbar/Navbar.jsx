@@ -6,8 +6,8 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full shadow">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+    <nav className="shadow">
+      <div className="justify-between container px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="/">
@@ -47,16 +47,15 @@ const Navbar = () => {
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-              <a href="#" className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800">Sign in</a>
+              <a href="#" className="inline-block w-full px-4 py-2 text-center text-white bg-indigo-500 rounded-md shadow hover:bg-gray-800">Star Applying</a>
             </div>
           </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
-          <a href="#" className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800">Sign in </a>
+          <a href="#" className="px-4 py-2 text-white bg-indigo-500 rounded-md shadow hover:bg-gray-800">Star Applying </a>
         </div>
       </div>
     </nav>
-
   );
 };
 
