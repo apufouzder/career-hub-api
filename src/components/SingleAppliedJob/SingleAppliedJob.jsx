@@ -3,7 +3,7 @@ import { CurrencyDollarIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
 const SingleAppliedJob = ({ job }) => {
-    console.log(job);
+    
     return (
         <div className="border-2 flex justify-between items-center rounded-md p-4 mb-4">
             <div className="flex items-center gap-6">
