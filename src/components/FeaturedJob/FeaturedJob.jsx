@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import { MapPinIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline'
 
 
 const FeaturedJob = ({ job }) => {
-    const { jobTitle, companyName, photo, site, jobType, location, salary } = job;
+    const { id, jobTitle, companyName, photo, site, jobType, location, salary } = job;
     return (
         <div className="border-2 p-7 rounded-md">
             <img className="mb-4" src={photo} alt="profile" />
@@ -15,12 +16,12 @@ const FeaturedJob = ({ job }) => {
             </div>
             <div className='flex gap-4 items-center my-1'>
                 <p className="my-2 text-lg flex items-center">
-                    <MapPinIcon className="h-6 w-6" /> 
+                    <MapPinIcon className="h-6 w-6 text-indigo-400" /> 
                     {location}
                 </p>
-                <p className="my-2 text-lg flex items-center"><CurrencyDollarIcon className="h-6 w-6" />  Salary: {salary}</p>
+                <p className="my-2 text-lg flex items-center"><CurrencyDollarIcon className="h-6 w-6 text-indigo-400" />  Salary: {salary}</p>
             </div>
-            <button className="px-4 py-2 text-white bg-indigo-500 rounded-md shadow hover:bg-indigo-600">View Details</button>
+            <Link to={`/job/${id}`} className="px-4 py-2 text-white bg-indigo-500 rounded-md shadow hover:bg-indigo-600">View Details</Link>
         </div>
     );
 };
