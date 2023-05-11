@@ -1,12 +1,35 @@
 import { BriefcaseIcon, CurrencyDollarIcon, PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 import { useLoaderData } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const JobDetailsSection = () => {
     const job = useLoaderData();
-    console.log('job', job);
+
 
     const jobId = +window.location.pathname.split('/')[2];
     const jobDetails = job[jobId - 1];
+
+
+    // 
+    const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
+    // const isAlreadyApplied = appliedJobs.includes(jobDetails.id);
+
+    const [isApplied, setIsApplied] = useState(appliedJobs.some(j => j.id === jobDetails.id));
+
+    console.log(isApplied, appliedJobs);
+
+    const handleApplyNow = () => {
+        if (!isApplied) {
+            appliedJobs.push(jobDetails);
+            localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
+            setIsApplied(true)
+            toast.success('Successfully applied this job.');
+        } else {
+            toast.warning('Already applied this job.');
+        }
+    };
 
     return (
         <div className="container leading-relaxed my-32 mx-auto grid md:grid-cols-3 gap-8">
@@ -44,8 +67,12 @@ const JobDetailsSection = () => {
                     </p>
                 </div>
 
-                <button className='px-4 py-2 w-full text-white bg-indigo-500 rounded-md shadow'>Apply Now</button>
+                <button className='px-4 py-2 w-full text-white bg-indigo-500 rounded-md shadow'
+                    onClick={handleApplyNow}
+                   
+                >{isApplied ? 'Already Applied' : 'Apply Now'}</button>
             </div>
+            <ToastContainer />
         </div>
     );
 };
