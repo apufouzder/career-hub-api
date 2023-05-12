@@ -10,9 +10,9 @@ const Navbar = () => {
       <div className="justify-between container px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="/">
-              <h2 className="text-2xl font-bold text-blue-950">CareerFind</h2>
-            </a>
+            <Link href="/">
+              <h2 className="text-2xl font-bold text-blue-950">Career<span className="text-indigo-500">Find</span></h2>
+            </Link>
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -35,6 +35,9 @@ const Navbar = () => {
           <div
             className={`justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"}`}>
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+              <li>
+                <Link to="/" className="text-gray-500">Home</Link>
+              </li>
               <li>
                 <Link to="/statistics" className="text-gray-500">Statistics</Link>
               </li>

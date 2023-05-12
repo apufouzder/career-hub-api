@@ -32,7 +32,7 @@ const fakeJob = [
 
 const JobCategoryList = () => {
     return (
-        <div className="container py-24 mx-auto">
+        <div className="container px-2 py-24 mx-auto">
             <div className="mb-8 text-center">
                 <h1 className="text-4xl font-bold mb-2">Job Category List</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Nihil  non ipsam inventore. Placeat!</p>
