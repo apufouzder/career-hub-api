@@ -10,6 +10,7 @@ import JobDetailsSection from './components/JobDetailsSection/JobDetailsSection'
 import Home from './components/Home/Home';
 import AppliedJobs from './components/AppliedJobs/AppliedJobs';
 import NotFound from './components/NotFound/NotFound';
+import Statistics from './components/Statistics/Statistics';
 
 
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "applied",
         element: <AppliedJobs />
+      },
+      {
+        path: "statistics",
+        element: <Statistics />
       },
       {
         path: "*",
