@@ -4,7 +4,7 @@ import SingleAppliedJob from "../SingleAppliedJob/SingleAppliedJob";
 
 
 const AppliedJobs = () => {
-    const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs'));
+    const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
 
     const [jobSite, setJobSite] = useState('');
 
