@@ -18,8 +18,6 @@ const JobDetailsSection = () => {
 
     const [isApplied, setIsApplied] = useState(appliedJobs.some(j => j.id === jobDetails.id));
 
-    console.log(isApplied, appliedJobs);
-
     const handleApplyNow = () => {
         if (!isApplied) {
             appliedJobs.push(jobDetails);
